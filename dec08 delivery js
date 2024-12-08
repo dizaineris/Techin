@@ -1,0 +1,25 @@
+function calculateDeliveryTime(houses, speed) {
+    let totalDistance = 0;
+
+    // visas atstumas visu namu
+    houses.forEach(house => {
+        const [x, y] = house;
+        totalDistance += Math.sqrt(x ** 2 + y ** 2); 
+    });
+
+    // atstumas x2
+    totalDistance *= 2;
+
+    // skaiciuok visa time'a valandomis
+    const totalTime = totalDistance / speed;
+
+    return totalTime;
+}
+
+// pavyzdinis inputas
+const houses = [[1, 2], [3, 4], [5, 6]];
+const speed = 10; // km/h
+
+// finalinis resultas
+const result = calculateDeliveryTime(houses, speed);
+console.log(`Total delivery time: ${result.toFixed(2)} hours`);
