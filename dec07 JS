@@ -1,0 +1,12 @@
+function formatPhoneNumber(phoneNumber) {
+    // Ensure the input is a string
+    phoneNumber = phoneNumber.toString();
+
+    // Format the phone number into (XXX) XXX-XXXX
+    let formatted = `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6)}`;
+    return formatted;
+}
+
+// Santa's Contact Example
+let output = formatPhoneNumber("8005551212");
+console.log(output); // --> "(800) 555-1212"
